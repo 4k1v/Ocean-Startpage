@@ -1,0 +1,15 @@
+[Unit]
+  Description=Smart test
+
+[Service]
+  ExecStart= sudo quark -p 9999 -g users -d /home/user/git/Ocean-Startpage/Ocean-Startpage
+  Type=idle
+  KillMode=process
+
+  SyslogIdentifier=smart-test
+  SyslogFacility=daemon
+
+  Restart=on-failure
+
+[Install]
+ WantedBy=default.target
